@@ -65,16 +65,46 @@ namespace Doga
             return null;
         }
 
-        public void SaveList(List<Utazas> utazasok, string path)
+        public void SaveList(List<Utazas> utazasok, string path, string id, string orszag, string honap, string nap, string hossz, string ar, string ellatas)
         {
+            if (id == "" || id == "0")
+            { //új
+                Utazas uj = new Utazas
+                {
+                    ID = utazasok.Last().ID + 1,
+                    Orszag = orszag,
+                    Honap = int.Parse(honap),
+                    Nap = int.Parse(nap),
+                    Hossz = int.Parse(hossz),
+                    Ar = int.Parse(ar),
+                    Ellatas = ellatas
+                };
+                utazasok.Add(uj);
+            }
+            else
+            { //firssítés
+                for (int i = 0; i < utazasok.Count; i++)
+                    if (utazasok[i].ID == int.Parse(id))
+                    {
+                        if (orszag != "")
+                            utazasok[i].Orszag = orszag.Trim();
+                        if (honap != "")
+                            utazasok[i].Honap = int.Parse(honap);
+                        if (nap != "")
+                            utazasok[i].Nap = int.Parse(nap);
+                        if (ar != "")
+                            utazasok[i].Hossz = int.Parse(ar);
+                        if (ellatas != null)
+                            utazasok[i].Ellatas = ellatas.Trim();
+                    }
+            }
+
             using (StreamWriter streamWriter = new StreamWriter(path))
             {
-
                 streamWriter.WriteLine("id,orszag,honap,nap,hossz,ar,ellatas");
 
                 foreach (var item in utazasok)
                     streamWriter.WriteLine(item);
-
             }
         }
 
