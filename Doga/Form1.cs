@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Doga
 {
@@ -44,6 +45,47 @@ namespace Doga
         private void Kereses_Click(object sender, EventArgs e)
         {
             dataGridView_base.DataSource = utazasRepo.FindByID(int.Parse(textBox_Kereses_ID.Text));
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            List<Utazas> utazasok = new List<Utazas>();
+
+            utazasok = utazasRepo.FindAll();
+
+            if(textBox_save_ID.Text == "")
+            { //új
+                Utazas uj = new Utazas
+                {
+                    ID = utazasok.Last().ID + 1,
+                    Orszag = textBox_save_orszag.Text,
+                    Honap = int.Parse(textBox_save_Honap.Text),
+                    Nap = int.Parse(textBox_save_nap.Text),
+                    Hossz = int.Parse(textBox_save_hossz.Text),
+                    Ar = int.Parse(textBox_save_ar.Text),
+                    Ellatas = comboBox_save_ellatas.SelectedItem.ToString()
+                };
+                utazasok.Add(uj);
+            }
+            else
+            { //firssítés
+                for (int i = 0; i < utazasok.Count; i++)
+                    if (utazasok[i].ID == int.Parse(textBox_save_ID.Text))
+                    {
+                        if(textBox_save_orszag.Text != "")
+                            utazasok[i].Orszag = textBox_save_orszag.Text;
+                        if (textBox_save_Honap.Text != "")
+                            utazasok[i].Honap = int.Parse(textBox_save_Honap.Text);
+                        if (textBox_save_nap.Text != "")
+                            utazasok[i].Nap = int.Parse(textBox_save_nap.Text);
+                        if (textBox_save_ar.Text != "")
+                            utazasok[i].Hossz = int.Parse(textBox_save_ar.Text);
+                        if (comboBox_save_ellatas.SelectedItem != null)
+                            utazasok[i].Ellatas = comboBox_save_ellatas.SelectedItem.ToString();
+                    }
+            }
+
+            dataGridView_base.DataSource = utazasok;
         }
     }
 }

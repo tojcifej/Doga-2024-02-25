@@ -41,6 +41,21 @@ namespace Doga
             this.textBox_Kereses_ID = new System.Windows.Forms.TextBox();
             this.label_Kereses_ID = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label_save_id = new System.Windows.Forms.Label();
+            this.label_save_orszag = new System.Windows.Forms.Label();
+            this.label_save_honap = new System.Windows.Forms.Label();
+            this.label_save_nap = new System.Windows.Forms.Label();
+            this.label_save_hossz = new System.Windows.Forms.Label();
+            this.label_save_ar = new System.Windows.Forms.Label();
+            this.label_save_ellatas = new System.Windows.Forms.Label();
+            this.textBox_save_ID = new System.Windows.Forms.TextBox();
+            this.textBox_save_orszag = new System.Windows.Forms.TextBox();
+            this.textBox_save_Honap = new System.Windows.Forms.TextBox();
+            this.textBox_save_nap = new System.Windows.Forms.TextBox();
+            this.textBox_save_hossz = new System.Windows.Forms.TextBox();
+            this.textBox_save_ar = new System.Windows.Forms.TextBox();
+            this.comboBox_save_ellatas = new System.Windows.Forms.ComboBox();
+            this.button_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_base)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -118,6 +133,21 @@ namespace Doga
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button_save);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox_save_ellatas);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_save_ar);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_save_hossz);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_save_nap);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_save_Honap);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_save_orszag);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_save_ID);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_ellatas);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_ar);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_hossz);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_nap);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_honap);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_orszag);
+            this.splitContainer1.Panel1.Controls.Add(this.label_save_id);
             this.splitContainer1.Panel1.Controls.Add(this.label_Kereses_ID);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_Kereses_ID);
             this.splitContainer1.Panel1.Controls.Add(this.Kereses);
@@ -131,7 +161,7 @@ namespace Doga
             // 
             // Kereses
             // 
-            this.Kereses.Location = new System.Drawing.Point(37, 225);
+            this.Kereses.Location = new System.Drawing.Point(12, 51);
             this.Kereses.Name = "Kereses";
             this.Kereses.Size = new System.Drawing.Size(75, 23);
             this.Kereses.TabIndex = 0;
@@ -141,7 +171,7 @@ namespace Doga
             // 
             // textBox_Kereses_ID
             // 
-            this.textBox_Kereses_ID.Location = new System.Drawing.Point(49, 25);
+            this.textBox_Kereses_ID.Location = new System.Drawing.Point(82, 28);
             this.textBox_Kereses_ID.Name = "textBox_Kereses_ID";
             this.textBox_Kereses_ID.Size = new System.Drawing.Size(100, 20);
             this.textBox_Kereses_ID.TabIndex = 1;
@@ -158,6 +188,134 @@ namespace Doga
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label_save_id
+            // 
+            this.label_save_id.AutoSize = true;
+            this.label_save_id.Location = new System.Drawing.Point(15, 115);
+            this.label_save_id.Name = "label_save_id";
+            this.label_save_id.Size = new System.Drawing.Size(18, 13);
+            this.label_save_id.TabIndex = 3;
+            this.label_save_id.Text = "ID";
+            // 
+            // label_save_orszag
+            // 
+            this.label_save_orszag.AutoSize = true;
+            this.label_save_orszag.Location = new System.Drawing.Point(15, 148);
+            this.label_save_orszag.Name = "label_save_orszag";
+            this.label_save_orszag.Size = new System.Drawing.Size(40, 13);
+            this.label_save_orszag.TabIndex = 4;
+            this.label_save_orszag.Text = "Ország";
+            // 
+            // label_save_honap
+            // 
+            this.label_save_honap.AutoSize = true;
+            this.label_save_honap.Location = new System.Drawing.Point(15, 181);
+            this.label_save_honap.Name = "label_save_honap";
+            this.label_save_honap.Size = new System.Drawing.Size(39, 13);
+            this.label_save_honap.TabIndex = 5;
+            this.label_save_honap.Text = "Honap";
+            // 
+            // label_save_nap
+            // 
+            this.label_save_nap.AutoSize = true;
+            this.label_save_nap.Location = new System.Drawing.Point(12, 216);
+            this.label_save_nap.Name = "label_save_nap";
+            this.label_save_nap.Size = new System.Drawing.Size(27, 13);
+            this.label_save_nap.TabIndex = 6;
+            this.label_save_nap.Text = "Nap";
+            // 
+            // label_save_hossz
+            // 
+            this.label_save_hossz.AutoSize = true;
+            this.label_save_hossz.Location = new System.Drawing.Point(12, 252);
+            this.label_save_hossz.Name = "label_save_hossz";
+            this.label_save_hossz.Size = new System.Drawing.Size(36, 13);
+            this.label_save_hossz.TabIndex = 7;
+            this.label_save_hossz.Text = "Hossz";
+            // 
+            // label_save_ar
+            // 
+            this.label_save_ar.AutoSize = true;
+            this.label_save_ar.Location = new System.Drawing.Point(12, 286);
+            this.label_save_ar.Name = "label_save_ar";
+            this.label_save_ar.Size = new System.Drawing.Size(17, 13);
+            this.label_save_ar.TabIndex = 6;
+            this.label_save_ar.Text = "Ar";
+            // 
+            // label_save_ellatas
+            // 
+            this.label_save_ellatas.AutoSize = true;
+            this.label_save_ellatas.Location = new System.Drawing.Point(12, 319);
+            this.label_save_ellatas.Name = "label_save_ellatas";
+            this.label_save_ellatas.Size = new System.Drawing.Size(38, 13);
+            this.label_save_ellatas.TabIndex = 8;
+            this.label_save_ellatas.Text = "Ellátás";
+            // 
+            // textBox_save_ID
+            // 
+            this.textBox_save_ID.Location = new System.Drawing.Point(82, 112);
+            this.textBox_save_ID.Name = "textBox_save_ID";
+            this.textBox_save_ID.Size = new System.Drawing.Size(100, 20);
+            this.textBox_save_ID.TabIndex = 9;
+            // 
+            // textBox_save_orszag
+            // 
+            this.textBox_save_orszag.Location = new System.Drawing.Point(82, 145);
+            this.textBox_save_orszag.Name = "textBox_save_orszag";
+            this.textBox_save_orszag.Size = new System.Drawing.Size(100, 20);
+            this.textBox_save_orszag.TabIndex = 10;
+            // 
+            // textBox_save_Honap
+            // 
+            this.textBox_save_Honap.Location = new System.Drawing.Point(82, 178);
+            this.textBox_save_Honap.Name = "textBox_save_Honap";
+            this.textBox_save_Honap.Size = new System.Drawing.Size(100, 20);
+            this.textBox_save_Honap.TabIndex = 11;
+            // 
+            // textBox_save_nap
+            // 
+            this.textBox_save_nap.Location = new System.Drawing.Point(82, 213);
+            this.textBox_save_nap.Name = "textBox_save_nap";
+            this.textBox_save_nap.Size = new System.Drawing.Size(100, 20);
+            this.textBox_save_nap.TabIndex = 12;
+            // 
+            // textBox_save_hossz
+            // 
+            this.textBox_save_hossz.Location = new System.Drawing.Point(82, 249);
+            this.textBox_save_hossz.Name = "textBox_save_hossz";
+            this.textBox_save_hossz.Size = new System.Drawing.Size(100, 20);
+            this.textBox_save_hossz.TabIndex = 13;
+            // 
+            // textBox_save_ar
+            // 
+            this.textBox_save_ar.Location = new System.Drawing.Point(82, 283);
+            this.textBox_save_ar.Name = "textBox_save_ar";
+            this.textBox_save_ar.Size = new System.Drawing.Size(100, 20);
+            this.textBox_save_ar.TabIndex = 14;
+            // 
+            // comboBox_save_ellatas
+            // 
+            this.comboBox_save_ellatas.FormattingEnabled = true;
+            this.comboBox_save_ellatas.Items.AddRange(new object[] {
+            "",
+            "reggeli",
+            "félpanzió",
+            "all inclusive"});
+            this.comboBox_save_ellatas.Location = new System.Drawing.Point(82, 319);
+            this.comboBox_save_ellatas.Name = "comboBox_save_ellatas";
+            this.comboBox_save_ellatas.Size = new System.Drawing.Size(100, 21);
+            this.comboBox_save_ellatas.TabIndex = 15;
+            // 
+            // button_save
+            // 
+            this.button_save.Location = new System.Drawing.Point(12, 362);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.TabIndex = 16;
+            this.button_save.Text = "Mentes";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // Form1
             // 
@@ -196,6 +354,21 @@ namespace Doga
         private System.Windows.Forms.TextBox textBox_Kereses_ID;
         private System.Windows.Forms.Button Kereses;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.ComboBox comboBox_save_ellatas;
+        private System.Windows.Forms.TextBox textBox_save_ar;
+        private System.Windows.Forms.TextBox textBox_save_hossz;
+        private System.Windows.Forms.TextBox textBox_save_nap;
+        private System.Windows.Forms.TextBox textBox_save_Honap;
+        private System.Windows.Forms.TextBox textBox_save_orszag;
+        private System.Windows.Forms.TextBox textBox_save_ID;
+        private System.Windows.Forms.Label label_save_ellatas;
+        private System.Windows.Forms.Label label_save_ar;
+        private System.Windows.Forms.Label label_save_hossz;
+        private System.Windows.Forms.Label label_save_nap;
+        private System.Windows.Forms.Label label_save_honap;
+        private System.Windows.Forms.Label label_save_orszag;
+        private System.Windows.Forms.Label label_save_id;
     }
 }
 
