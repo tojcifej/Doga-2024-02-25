@@ -65,6 +65,19 @@ namespace Doga
             return null;
         }
 
+        public void SaveList(List<Utazas> utazasok, string path)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+
+                streamWriter.WriteLine("id,orszag,honap,nap,hossz,ar,ellatas");
+
+                foreach (var item in utazasok)
+                    streamWriter.WriteLine(item);
+
+            }
+        }
+
         
 
     }

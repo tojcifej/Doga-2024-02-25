@@ -53,7 +53,7 @@ namespace Doga
 
             utazasok = utazasRepo.FindAll();
 
-            if(textBox_save_ID.Text == "")
+            if(textBox_save_ID.Text == "" && textBox_save_ID.Text == "0")
             { //új
                 Utazas uj = new Utazas
                 {
@@ -86,6 +86,7 @@ namespace Doga
             }
 
             dataGridView_base.DataSource = utazasok;
+            utazasRepo.SaveList(utazasok, utazasRepo.path);
         }
     }
 }
