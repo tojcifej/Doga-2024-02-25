@@ -11,12 +11,15 @@ namespace Doga
     {
         public bool skip = true;
         public char delimiter = ',';
-        public string path = "utazasok.csv";
+        public string path = "";
 
         Utazas utazas = new Utazas();
 
-        public List<Utazas> ListaFeltoltese()
+        public List<Utazas> FindAll()
         {
+            if (path == "")
+                return null;
+
             List<Utazas> utazasok = new List<Utazas>();
 
             using (StreamReader streamReader = new StreamReader(path))
@@ -32,6 +35,34 @@ namespace Doga
             }
 
             return utazasok;
+        }
+
+        public List<Utazas> FindByID(int id)
+        {
+            if (path == "")
+                return null;
+
+            List<Utazas> utazasok = new List<Utazas>();
+
+            using (StreamReader streamReader = new StreamReader(path))
+            {
+                if (skip)
+                    streamReader.ReadLine();
+
+                while (!streamReader.EndOfStream)
+                {
+                    string line = streamReader.ReadLine();
+                    Utazas FromLine = utazas.UtazasFromLine(line, delimiter);
+                    if (FromLine.ID == id)
+                    {
+                        utazasok.Add(FromLine);
+                        return utazasok;
+                    }
+
+                }
+            }
+
+            return null;
         }
 
         
